@@ -1,29 +1,31 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld :msg="msg" :user="user"/>
+    <HelloWorld :msg="msg" :user="user" />
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, defineAsyncComponent, ref } from "vue";
-import { User } from "@/model/user"
+import { defineComponent, defineAsyncComponent, ref, reactive } from "vue";
+import { User } from "@/model/user";
 
-export default defineComponent ({
+export default defineComponent({
   components: {
-    HelloWorld: defineAsyncComponent(() => import("@/components/HelloWorld.vue"))
+    HelloWorld: defineAsyncComponent(() => import("@/components/HelloWorld.vue")),
   },
 
   setup() {
-    let msg = ref<string>("Welcome to Your Vue.js + TypeScript App")
-    let user = ref<User>({name: "bobo", phone: "1233211234567"})
-
+    let msg = ref<string>("Welcome to Your Vue.js + TypeScript App");
+    let user = reactive({ name: "bobo", phone: "1233211234567" } as User);
 
     setTimeout(() => {
-      msg.value = "Welcome to Your Vue.js + TypeScript App YOYOYO"
-    },1000)
+      msg.value = "Welcome to Your Vue.js + TypeScript App YOYOYO";
+      user.phone = "09098080704";
 
-    return { msg, user }
-  }
-})
+      console.log(user)
+    }, 1000);
+
+    return { msg, user };
+  },
+});
 </script>

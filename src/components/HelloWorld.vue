@@ -114,7 +114,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, toRefs, Ref } from "vue";
-import { User } from "@/model/user"
+import { User } from "@/model/user";
 
 export default defineComponent({
   props: {
@@ -122,14 +122,13 @@ export default defineComponent({
     user: {} as PropType<User>,
   },
   setup(props) {
-    const { name, phone } = (toRefs(props).user as Ref<User>).value;
+    const { name, phone } = toRefs((toRefs(props).user as Ref<User>).value);
 
     return { name, phone };
   },
 });
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 h3 {
   margin: 40px 0 0;
