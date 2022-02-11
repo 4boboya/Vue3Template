@@ -6,7 +6,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, defineAsyncComponent, ref, reactive } from "vue";
+import { defineComponent, defineAsyncComponent, ref, reactive, computed } from "vue";
+import { useStore } from "vuex"
 import { User } from "@/model/user";
 
 export default defineComponent({
@@ -15,14 +16,21 @@ export default defineComponent({
   },
 
   setup() {
+    const store = useStore();
     let msg = ref<string>("Welcome to Your Vue.js + TypeScript App");
-    let user = reactive({ name: "bobo", phone: "1233211234567" } as User);
+    let user = reactive({
+      name: "bobo",
+      phone: "1233211234567",
+      body: {},
+    } as User);
+    let test = computed(() => store.getters.GetTest)
+    console.log(test.value)
 
     setTimeout(() => {
       msg.value = "Welcome to Your Vue.js + TypeScript App YOYOYO";
       user.phone = "09098080704";
-
-      console.log(user)
+      user.body.height = "181cm";
+      user.body.weight = "73kg"
     }, 1000);
 
     return { msg, user };

@@ -3,6 +3,7 @@
     <h1>{{ msg }}</h1>
     <h3>Name : {{ name }}</h3>
     <h3>Phone: {{ phone }}</h3>
+    <h3>Body: {{ body.height }} {{ body.weight }}</h3>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
       check out the
@@ -122,9 +123,9 @@ export default defineComponent({
     user: {} as PropType<User>,
   },
   setup(props) {
-    const { name, phone } = toRefs((toRefs(props).user as Ref<User>).value);
+    const { name, phone, body } = toRefs((toRefs(props).user as Ref<User>).value);
 
-    return { name, phone };
+    return { name, phone, body };
   },
 });
 </script>
