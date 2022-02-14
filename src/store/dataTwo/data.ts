@@ -47,7 +47,7 @@ const getters: GetterTree<State, State> & Getters = {
     }
 }
 
-const DataModule: Module<State, State> = {
+const DataModule = {
     namespaced: true,
     state,
     mutations,

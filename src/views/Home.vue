@@ -24,6 +24,7 @@ export default defineComponent({
       phone: "1233211234567",
       body: {},
     } as User);
+    console.log(store)
     let test2 = computed(() => store.getters["DataTwo/GetTest"])
     let test = computed(() => store.getters["Data/GetTest"])
     const getters = mapGetters()['Data/GetTest']
