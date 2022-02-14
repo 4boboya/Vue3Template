@@ -1,4 +1,4 @@
-import { Module, MutationTree, ActionContext, ActionTree, GetterTree } from "vuex"
+import { MutationTree, ActionContext, ActionTree, GetterTree } from "vuex"
 
 
 const enum MutauionType {
