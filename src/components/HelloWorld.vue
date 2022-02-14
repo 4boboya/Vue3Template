@@ -115,7 +115,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType, toRefs, Ref } from "vue";
-import { User } from "@/model/user";
+import { User } from "@/type/user";
 
 export default defineComponent({
   props: {
