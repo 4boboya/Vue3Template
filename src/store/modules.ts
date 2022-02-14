@@ -1,8 +1,6 @@
-import Data from './data/data'
-import DataTwo from './dataTwo/data'
+import Data from './data'
 
 
 export const modules = {
     Data,
-    DataTwo,
 };

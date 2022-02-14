@@ -25,16 +25,12 @@ export default defineComponent({
       body: {},
     } as User);
     console.log(store)
-    let test2 = computed(() => store.getters["DataTwo/GetTest"])
     let test = computed(() => store.getters["Data/GetTest"])
     const getters = mapGetters()['Data/GetTest']
-    console.log(test2.value)
     console.log(test.value)
     console.log(getters.value)
 
-    store.dispatch("DataTwo/SET_TEST", "change test")
     store.dispatch("Data/SET_TEST", "change test")
-    console.log(test2.value)
     console.log(test.value)
     console.log(getters.value)
 
