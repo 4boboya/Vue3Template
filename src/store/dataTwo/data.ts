@@ -29,7 +29,7 @@ type Getters = {
 
 
 const state: State = {
-    test: "Test" as string,
+    test: "Test",
 }
 const mutations: MutationTree<State> & Mutations = {
     [MutauionType.SetTest](state, test) {
