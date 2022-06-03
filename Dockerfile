@@ -4,9 +4,6 @@ COPY ./ /app
 
 WORKDIR /app
 RUN npm install 
-WORKDIR /app/node_modules/tailwindcss
-RUN npm install color@^3.2.1
-WORKDIR /app
 RUN npm run build
 FROM nginx
 RUN mkdir /app
